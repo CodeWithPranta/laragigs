@@ -19,6 +19,7 @@ Route::get('/', function () {
         'heading' => 'latest listings',
         'listings' =>
         [
+        [
             'id' => 1,
             'title' => 'Listing One',
             'description' => 'Here paste or grab some dummy text',
@@ -28,5 +29,6 @@ Route::get('/', function () {
             'title' => 'Listing One',
             'description' => 'Here paste or grab some dummy text',
         ],
+        ]
     ]);
 });
