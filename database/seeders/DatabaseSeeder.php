@@ -16,13 +16,16 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         \App\Models\User::factory(6)->create();
+        Listing::factory(6)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
 
-        Listing::create([
+        /***
+         *
+         *  Listing::create([
             'title' => 'Laravel Senior Developer',
             'tags' => 'laravel, javascript',
             'company' => 'Acme Corp',
@@ -41,5 +44,7 @@ class DatabaseSeeder extends Seeder
                 'website' => 'https://www.starkindustries.com',
                 'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam minima et illo reprehenderit quas possimus voluptas repudiandae cum expedita, eveniet aliquid, quam illum quaerat consequatur! Expedita ab consectetur tenetur delensiti?'
             ]);
+         */
+
     }
 }
