@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Listing;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,18 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('listings', [
         'heading' => 'latest listings',
-        'listings' =>
-        [
-        [
-            'id' => 1,
-            'title' => 'Listing One',
-            'description' => 'Here paste or grab some dummy text',
-        ],
-        [
-            'id' => 1,
-            'title' => 'Listing One',
-            'description' => 'Here paste or grab some dummy text',
-        ],
-        ]
+        'listings' => Listing::all()
     ]);
 });
