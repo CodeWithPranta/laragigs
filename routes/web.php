@@ -15,9 +15,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// All listings
 Route::get('/', function () {
     return view('listings', [
         'heading' => 'latest listings',
         'listings' => Listing::all()
+    ]);
+});
+
+// Single listings
+Route::get('/listings/{id}', function($id){
+    return view('listing', [
+        'listing' => Listing::find($id)
     ]);
 });
