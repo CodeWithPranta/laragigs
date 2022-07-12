@@ -16,12 +16,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// All listings
-Route::get('/', [ListingController::class, 'index']);
-
-// Single listings
-Route::get('/listings/{listing}', [ListingController::class, 'show']);
-
 // Common Resource Routes:
 // index - Show all listings
 // show - Show single listing
@@ -30,3 +24,19 @@ Route::get('/listings/{listing}', [ListingController::class, 'show']);
 // edit - Show form to edit listing
 // update - Update Listing
 // destroy - Delete Listing
+
+// All listings
+Route::get('/', [ListingController::class, 'index']);
+
+// Show crate form
+/**
+ * static similar structured routing should right first otherwise it will bring 404
+ */
+Route::get('/listings/create', [ListingController::class, 'create']);
+
+// Single listings
+Route::get('/listings/{listing}', [ListingController::class, 'show']);
+
+
+
+
