@@ -33,19 +33,28 @@ Route::get('/', [ListingController::class, 'index']);
 /**
  * static similar structured routing should right first otherwise it will bring 404
  */
-Route::get('/listings/create', [ListingController::class, 'create']);
+//Route::get('/listings/create', [ListingController::class, 'create'])->middleware('auth');
 
 // Store Listing Data
-Route::post('/listings', [ListingController::class, 'store']);
+//Route::post('/listings', [ListingController::class, 'store']);
 
 // Show Edit Form
-Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']);
+//Route::get('/listings/{listing}/edit', [ListingController::class, 'edit'])->middleware('auth');
 
 // Update listing
-Route::put('/listings/{listing}', [ListingController::class, 'update']);
+//Route::put('/listings/{listing}', [ListingController::class, 'update'])->middleware('auth');
 
 // Delete listing
-Route::delete('/listings/{listing}', [ListingController::class, 'destroy']);
+//Route::delete('/listings/{listing}', [ListingController::class, 'destroy'])->middleware('auth');
+
+// Route middleware group
+Route::middleware(['auth'])->group(function () {
+    Route::get('/listings/create', [ListingController::class, 'create']);
+    Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']);
+    Route::post('/listings', [ListingController::class, 'store']);
+    Route::put('/listings/{listing}', [ListingController::class, 'update']);
+    Route::delete('/listings/{listing}', [ListingController::class, 'destroy']);
+});
 
 // Single listings
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
@@ -60,10 +69,12 @@ Route::post('/users', [UserController::class, 'store']);
 Route::post('/logout', [UserController::class, 'logout']);
 
 // Show Login Form
-Route::get('/login', [UserController::class, 'login']);
+Route::get('/login', [UserController::class, 'login'])->name('login');
 
 // Log in user
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
+
+
 
 
 
