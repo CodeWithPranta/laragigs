@@ -56,23 +56,29 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('/listings/{listing}', [ListingController::class, 'destroy']);
 });
 
+// Manage Listings
+Route::get('/listings/manage', [ListingController::class, 'manage'])->middleware('auth');
+
 // Single listings
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
 
 // Show Register create form
-Route::get('/register', [UserController::class, 'create']);
+// We can use again middleware group but it's focus on both practice
+Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 
 // Create new user
 Route::post('/users', [UserController::class, 'store']);
 
 // Log user out
-Route::post('/logout', [UserController::class, 'logout']);
+Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
 
 // Show Login Form
-Route::get('/login', [UserController::class, 'login'])->name('login');
+Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
 
 // Log in user
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
+
+
 
 
 
