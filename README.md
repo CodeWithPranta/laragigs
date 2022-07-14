@@ -3,14 +3,14 @@
 <a href="https://jobs.webapp99.com" target="_blank" style="font-size:32px"> # Click Here to See Live Demo</a>
 
 # Project Features 
-## you will get custom login and registration controller and model
+## You will get custom login and registration controller and model
 ## Eloquoent relationships in laravel
 ## PHP explode() function to spilt string into tags
 ## Laravel componenets and slot for maintaing DRY 
 ## Migrations, seeder, tinker, faker, factories practice with clear example
 ## Core concept in laravel routes
 ## Form validation, successful message with AlpineJS 
-## Larvel sumit methods and many more....
+## Larvel Form methods and many more....
 
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
